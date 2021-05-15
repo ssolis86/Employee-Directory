@@ -7,15 +7,31 @@ import Alert from "../components/Alert";
 
 class Search extends Component {
   state = {
+    search: "",
     users: [],
+    origin: []
 
   };
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
     API.getBaseUsers()
-      .then(res => this.setState({users: res.data.results}))
+      .then(res => this.setState({users: res.data.results, origin: res.data.results}))
       .catch(err => console.log(err));
+  };
+
+  handleInputChange = event => {
+    this.setState({ search: event.target.value });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if(this.state.search === ""){
+      this.setState({ users: this.state.origin})
+    } else {
+      const searchedUsers = this.state.users.filter((key) => this.state.search === key.name.first)
+      this.setState({ users: searchedUsers })
+    }
   };
 
   render() {
@@ -29,11 +45,11 @@ class Search extends Component {
           >
             {this.state.error}
           </Alert>
-          {/* <SearchForm
+          <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             breeds={this.state.users}
-          /> */}
+          />
           <SearchResults results={this.state.users} />
         </Container>
       </div>

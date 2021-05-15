@@ -10,8 +10,8 @@ function SearchForm(props) {
         <input
           value={props.search}
           onChange={props.handleInputChange}
-          name="breed"
-          list="breeds"
+          name="user"
+          list="users"
           type="text"
           className="form-control"
           placeholder="Search by first-name or last-name"
