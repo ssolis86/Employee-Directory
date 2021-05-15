@@ -9,7 +9,7 @@ export default {
   getDogsOfBreed: function(breed) {
     return axios.get("https://dog.ceo/api/breed/" + breed + "/images");
   },
-  getBaseBreedsList: function() {
-    return axios.get("https://dog.ceo/api/breeds/list");
+  getBaseUsers: function() {
+    return axios.get("https://randomuser.me/api/?results=50");
   }
 };
