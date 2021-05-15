@@ -34,7 +34,7 @@ class Search extends Component {
             handleInputChange={this.handleInputChange}
             breeds={this.state.users}
           /> */}
-          {/* <SearchResults results={this.state.results} /> */}
+          <SearchResults results={this.state.users} />
         </Container>
       </div>
     );
