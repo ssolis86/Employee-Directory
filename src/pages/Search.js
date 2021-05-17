@@ -33,6 +33,12 @@ class Search extends Component {
       this.setState({ users: searchedUsers })
     }
   };
+  
+  handleFormAlpha = event => {
+    event.preventDefault();
+    const sortedUsers = [...this.state.users].sort((a, b) => a.name.first.localeCompare(b.name.first))
+    this.setState({ users: sortedUsers});
+  };
 
   render() {
     return (
@@ -49,6 +55,7 @@ class Search extends Component {
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             breeds={this.state.users}
+            handleFormAlpha={this.handleFormAlpha}
           />
           <SearchResults results={this.state.users} />
         </Container>

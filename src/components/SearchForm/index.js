@@ -17,11 +17,9 @@ function SearchForm(props) {
           placeholder="Search by first-name or last-name"
           id="breed"
         />
-        <datalist id="breeds">
-          {props.breeds.map(breed => (
-            <option value={breed} key={breed} />
-          ))}
-        </datalist>
+        <button type="submit" onClick={props.handleFormAlpha} className="btn btn-danger">
+          Sort Alphabetically
+        </button>
         <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
           Search
         </button>
