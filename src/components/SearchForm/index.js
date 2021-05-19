@@ -6,7 +6,7 @@ function SearchForm(props) {
   return (
     <form className="search">
       <div className="form-group">
-        <label htmlFor="breed">Search by category:</label>
+        <label htmlFor="category">Search by category:</label>
         <input
           value={props.search}
           onChange={props.handleInputChange}
@@ -14,8 +14,8 @@ function SearchForm(props) {
           list="users"
           type="text"
           className="form-control"
-          placeholder="Search by first-name or last-name"
-          id="breed"
+          placeholder="Search by first name"
+          id="category"
         />
         <button type="submit" onClick={props.handleFormAlpha} className="btn btn-danger">
           Sort Alphabetically
