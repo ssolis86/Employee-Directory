@@ -17,3 +17,4 @@ An employee or manager would benefit greatly from being able to view non-sensiti
 ### Github Deployed Link
 
 [Github Deployed Link](https://ssolis86.github.io/Employee-Directory/)
+
